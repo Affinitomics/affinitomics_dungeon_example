@@ -1,0 +1,82 @@
+#the_room_container
+{
+	position: relative;
+	width: 480px;
+	height: 480px;
+
+	top: 120px;
+	left: 120px;
+}	
+
+
+#the_room
+{
+	position: absolute;
+}
+
+#the_key
+{
+	position: absolute;
+	top: 150px;
+	left: 150px;
+}
+
+#the_player
+{
+	position: absolute;
+	top: 250px;
+	left: 250px;
+}
+
+#hallway_west
+{
+	position: absolute;
+	top: 215px;
+	left: 0px;
+}
+
+#hallway_north
+{
+	position: absolute;
+	top: 0px;
+	left: 200px;
+}
+
+#hallway_east
+{
+	position: absolute;
+	top: 215px;
+	right: 0px;
+}
+
+#hallway_south
+{
+	position: absolute;
+	bottom: 0px;
+	left: 200px;
+}
+
+
+#gold_chest
+{
+	position: absolute;
+	bottom: 100px;
+	left: 220px;
+}
+
+#room_exit
+{
+	position: absolute;
+	top: 120px;
+	left: 220px;
+}
+
+img[id^=goblin_] 
+{
+  position: absolute;
+  top: 100px;	
+  left: 350px;
+}
+
+
+
