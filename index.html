@@ -41,10 +41,18 @@ Author URI: http://prefrent.com
 
 	<body>
 
-		<div id="dungeon_game" >
+		<div id="no_api_key">
+			<h2> NOTE: An Affinitomics API Key is necessary to use this example </h2>
+			<h3> Please go to <a href="https://www.affinitomics.com/users/sign_up" target="_blank">Affinitomics.com</a> to obtain a key </h3>
+		
+			<div> Once you have obtained an API key, set the g_apiKey variable in the affinitomics_api_key.js file and reload this page.</div>
+			<div> (you may need to reset your broswer's cache) </div>
 		</div>
 
-		<input type="button" value="Start!" onclick="StartGame();">
+		<input id="start_button" type="button" value="Start!" onclick="StartGame();">
+
+		<div id="dungeon_game" />
+		</div>
 
 	</body>
 
@@ -58,17 +66,20 @@ var _dungeon = 0;
 var _player = 0;
 
 var _gameManager = 0;
+var _keyValid = false;
 
 function initFunction()
 {
-
-	setupGameManager();
+	if (CheckKey())
+	{
+		setupGameManager();
+	}
 
 }
 
 function StartGame()
 {
-	if (g_gameManager)
+	if (g_gameManager && _keyValid)
 	{
 		g_gameManager.StartGame();
 	}
@@ -81,6 +92,21 @@ function setupGameManager()
 	g_gameManager = new GameManager();
 }
 
+//this function ensures that an API key has been added to the g_apiKey variable in the affinitomics_api_key.js file before continuing with server calls 
+function CheckKey()
+{
+	if (g_apiKey.length > 0)
+	{
+		_keyValid = true;
+		return true;
+	}
+
+	 jQuery('#no_api_key').show();
+	 jQuery('#start_button').hide();
+ 
+	_keyValid = false;
+	return false;
+}
 
 </script>
 

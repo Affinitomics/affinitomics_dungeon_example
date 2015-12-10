@@ -78,5 +78,19 @@ img[id^=goblin_]
   left: 350px;
 }
 
+#start_button
+{
+	position: relative;
+	top: 90px;
+	left: 45px;
 
+	width: 100px;
+	height: 100px;
+	font-size: 12pt;
+}
+
+#no_api_key
+{
+	display: none;
+}
 
